@@ -1,6 +1,6 @@
 {
   "name": "cf-signature",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Signature module for signing requests",
   "main": "index.js",
   "scripts": {

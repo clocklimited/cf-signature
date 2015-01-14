@@ -1,7 +1,8 @@
 var crypto = require('crypto')
 
-module.exports = function createSignature(key, method, contentType, date, path) {
+module.exports = function createSignature(key, method, contentType, date, path, ttl) {
   var hmac = crypto.createHmac('sha1', key)
-    , packet = method + '\n\n' + contentType + '\n' + date + '\n\n' + path
+    , packet = method + '\n' + contentType + '\n' + date + '\n' + path
+  if (ttl) packet += '\n' + ttl
   return hmac.update(packet).digest('base64')
 }

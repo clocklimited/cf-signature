@@ -4,8 +4,25 @@
   "description": "Signature module for signing requests",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "jshint .",
+    "checkStyle": "jscs .",
+    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "test": "istanbul cover ./node_modules/.bin/_mocha test",
+    "posttest": "istanbul check-coverage && rm -rf coverage",
+    "prepublish": "npm test && npm prune"
   },
-  "author": "Paul Serby",
-  "license": "CLOCK"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:clocklimited/cf-signature"
+  },
+  "publishConfig": {
+    "registry": "http://npm.clockte.ch"
+  },
+  "author": "Paul Serby <paul.serby@clock.co.uk>",
+  "license": "Clock",
+  "devDependencies": {
+    "istanbul": "^0.3.2",
+    "jscs": "^1.6.2",
+    "jshint": "^2.5.6"
+  }
 }

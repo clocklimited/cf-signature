@@ -6,10 +6,7 @@
   "scripts": {
     "lint": "jshint .",
     "checkStyle": "jscs .",
-    "pretest": "npm run-script lint && npm run-script checkStyle",
-    "test": "istanbul cover ./node_modules/.bin/_mocha test",
-    "posttest": "istanbul check-coverage && rm -rf coverage",
-    "prepublish": "npm test && npm prune"
+    "pretest": "npm run-script lint && npm run-script checkStyle"
   },
   "repository": {
     "type": "git",

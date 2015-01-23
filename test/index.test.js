@@ -1,5 +1,5 @@
 var assert = require('assert')
-  , createSignature = require('../index.js')
+  , createSignature = require('..')
 
 describe('cf-signature', function () {
   var date = (new Date()).toUTCString()

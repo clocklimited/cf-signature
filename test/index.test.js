@@ -16,8 +16,7 @@ describe('cf-signature', function () {
   })
 
   it('should normalize space escape sequence (+)', function (done) {
-    var date = (new Date()).toUTCString()
-      , unescapedUri = '/path/with/+/'
+    var unescapedUri = '/path/with/+/'
       , escapedUri = '/path/with/%20/'
       , unescapedHash = createSignature(apiKey, 'GET', '', date, unescapedUri)
       , escapedHash = createSignature(apiKey, 'GET', '', date, escapedUri)

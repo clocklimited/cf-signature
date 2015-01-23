@@ -2,7 +2,13 @@ var crypto = require('crypto')
 
 module.exports = function createSignature(key, method, contentType, date, path, ttl) {
   var hmac = crypto.createHmac('sha1', key)
-    , packet = method + '\n' + contentType + '\n' + date + '\n' + path
+    , pathNormalized = normalize(path)
+    , packet = method + '\n' + contentType + '\n' + date + '\n' + pathNormalized
+
   if (ttl) packet += '\n' + ttl
   return hmac.update(packet).digest('base64')
+}
+
+function normalize(path) {
+  return path.replace('+', '%20').replace('\'', '%27')
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "jshint .",
     "checkStyle": "jscs .",
-    "pretest": "npm run-script lint && npm run-script checkStyle"
+    "pretest": "npm run-script lint && npm run-script checkStyle",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec --recursive"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "istanbul": "^0.3.2",
     "jscs": "^1.6.2",
-    "jshint": "^2.5.6"
+    "jshint": "^2.5.6",
+    "mocha": "1"
   }
 }

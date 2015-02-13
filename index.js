@@ -10,5 +10,5 @@ module.exports = function createSignature(key, method, contentType, date, path, 
 }
 
 function normalize(path) {
-  return path.replace('+', '%20').replace('\'', '%27')
+  return path.replace(/\+/g, '%20').replace(/\'/g, '%27')
 }

@@ -5,9 +5,9 @@ describe('cf-signature', function () {
   var date = (new Date()).toUTCString()
     , apiKey = 'api-key'
 
-  it('should normalize foot mark (\')', function (done) {
-    var unescapedUri = '/path/with/\'/'
-      , escapedUri = '/path/with/%27/'
+  it('should normalize multiple foot mark (\')', function (done) {
+    var unescapedUri = '/path/with/\'/\'/\'/'
+      , escapedUri = '/path/with/%27/%27/%27/'
       , unescapedHash = createSignature(apiKey, 'GET', '', date, unescapedUri)
       , escapedHash = createSignature(apiKey, 'GET', '', date, escapedUri)
 
@@ -15,9 +15,9 @@ describe('cf-signature', function () {
     done()
   })
 
-  it('should normalize space escape sequence (+)', function (done) {
-    var unescapedUri = '/path/with/+/'
-      , escapedUri = '/path/with/%20/'
+  it('should normalize multiple space escape sequence (+)', function (done) {
+    var unescapedUri = '/path/with/+/+/+/'
+      , escapedUri = '/path/with/%20/%20/%20/'
       , unescapedHash = createSignature(apiKey, 'GET', '', date, unescapedUri)
       , escapedHash = createSignature(apiKey, 'GET', '', date, escapedUri)
 

@@ -9,14 +9,14 @@ function signUri(uri, key, id, ttl) {
     , hash = sign(key, 'GET', '', date, uri, ttl)
     , urlParts = url.parse(uri, true)
 
-    if (id === undefined) throw new Error('id is required')
+  if (id === undefined) throw new Error('id is required')
 
-    // Clear search so query is used
-    urlParts.search = null
-    extend(urlParts.query
-      , { authorization: id + ':' + hash
-        , 'x-cf-date':  date
-        })
+  // Clear search so query is used
+  urlParts.search = null
+  extend(urlParts.query
+    , { authorization: id + ':' + hash
+      , 'x-cf-date':  date
+      })
 
   return url.format(urlParts)
 }

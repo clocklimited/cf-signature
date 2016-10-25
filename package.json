@@ -6,15 +6,15 @@
   "scripts": {
     "lint": "jshint .",
     "checkStyle": "jscs .",
-    "pretest": "npm run-script lint && npm run-script checkStyle",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec --recursive"
+    "pretest": "npm run lint && npm run checkStyle",
+    "test": "istanbul cover ./node_modules/.bin/_mocha -- -R spec --recursive"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:clocklimited/cf-signature"
   },
   "publishConfig": {
-    "registry": "http://npm.clockte.ch"
+    "registry": "http://registry.npmjs.org"
   },
   "author": "Paul Serby <paul.serby@clock.co.uk>",
   "license": "Clock",

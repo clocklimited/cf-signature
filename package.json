@@ -5,7 +5,7 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "url.js"
+    "uri.js"
   ],
   "scripts": {
     "lint": "eslint .",

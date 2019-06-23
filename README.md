@@ -1,5 +1,7 @@
 # cf-signature
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/clocklimited/cf-signature.svg)](https://greenkeeper.io/)
+
 Sign requests for tests or external API calls to catfish.
 
 ## Installation
